@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LLCC ROTCU — Cadet Information System</title>
+<link rel="icon" type="image/png" href="img1.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     ENTRY FORM
+═══════════════════════════════════════════════════════ -->
+<div id="entry-section">
+<header class="app-header">
+  <img src="img2.png" class="logo" alt="LLCC">
+  <div class="title-wrap">
+    <h1>LLCC ROTCU — Cadet Information System</h1>
+    <p>Dept. of Military Science and Tactics · Lapu-Lapu City College ROTC Unit</p>
+  </div>
+  <img src="img1.png" class="logo" alt="Liberators">
+</header>
+
+<div class="main-wrap">
+<div class="notice">
+  ℹ️ <strong>Fill in once — all 4 official documents auto-populate instantly.</strong>
+  2×2 photos and thumb marks must be affixed manually after printing.
+</div>
+
+<!-- 1. Personal Info -->
+<div class="fsec">
+  <div class="fsec-head">👤 1. Personal Information</div>
+  <div class="fsec-body">
+    <div class="g3">
+      <div class="field"><label>Last Name *</label><input id="lastName" type="text" placeholder="DELA CRUZ" autocomplete="off"></div>
+      <div class="field"><label>First Name *</label><input id="firstName" type="text" placeholder="Juan" autocomplete="off"></div>
+      <div class="field"><label>Middle Name</label><input id="middleName" type="text" placeholder="Santos" autocomplete="off"></div>
+    </div>
+    <hr class="div">
+    <div class="g4">
+      <div class="field"><label>Date of Birth</label><input id="dob" type="date"></div>
+      <div class="field"><label>Place of Birth</label><input id="pob" type="text" placeholder="Cebu City"></div>
+      <div class="field"><label>Blood Type</label>
+        <select id="bloodType"><option value="">— select —</option>
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select></div>
+      <div class="field"><label>Complexion</label>
+        <select id="complexion"><option value="">— select —</option>
+          <option>Fair</option><option>Light Brown</option><option>Brown</option>
+          <option>Dark Brown</option><option>Morena</option><option>Mestiza</option>
+        </select></div>
+    </div>
+    <div class="g4">
+      <div class="field"><label>Height (cm)</label><input id="height" type="text" placeholder="165"></div>
+      <div class="field"><label>Weight (kg)</label><input id="weight" type="text" placeholder="60"></div>
+      <div class="field"><label>Sex</label>
+        <select id="sex"><option value="">— select —</option><option>Male</option><option>Female</option></select></div>
+      <div class="field"><label>Civil Status</label>
+        <select id="civilStatus"><option value="">— select —</option>
+          <option>Single</option><option>Married</option><option>Widowed</option><option>Separated</option>
+        </select></div>
+    </div>
+    <hr class="div">
+    <div class="g3">
+      <div class="field"><label>Course / Program</label><input id="course" type="text" placeholder="BSBA"></div>
+      <div class="field"><label>School / College</label><input id="school" type="text" placeholder="College of Business"></div>
+      <div class="field"><label>Religion</label><input id="religion" type="text" placeholder="Roman Catholic"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Temporary Address -->
+<div class="fsec">
+  <div class="fsec-head">🏠 2. Temporary Address</div>
+  <div class="fsec-body">
+    <div class="g1"><div class="field"><label>No. / Street / Village / Barangay</label><input id="tmpStreet" type="text" placeholder="123 Rizal St., Brgy. Pusok"></div></div>
+    <div class="g3">
+      <div class="field"><label>Municipality / City</label><input id="tmpCity" type="text" placeholder="Lapu-Lapu City"></div>
+      <div class="field"><label>Province</label><input id="tmpProvince" type="text" placeholder="Cebu"></div>
+      <div class="field"><label>Telephone / Cell Number</label><input id="tmpTel" type="tel" placeholder="09XX-XXX-XXXX"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Permanent Address -->
+<div class="fsec">
+  <div class="fsec-head">🏡 3. Permanent Address</div>
+  <div class="fsec-body">
+    <div class="g1"><div class="field"><label>No. / Street / Village / Barangay</label><input id="permStreet" type="text" placeholder="456 Mabini St., Brgy. Agus"></div></div>
+    <div class="g4">
+      <div class="field"><label>Municipality / City</label><input id="permCity" type="text" placeholder="Lapu-Lapu City"></div>
+      <div class="field"><label>Province</label><input id="permProvince" type="text" placeholder="Cebu"></div>
+      <div class="field"><label>Region</label><input id="permRegion" type="text" placeholder="Region VII"></div>
+      <div class="field"><label>Telephone / Cell Number</label><input id="permTel" type="tel" placeholder="09XX-XXX-XXXX"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Family -->
+<div class="fsec">
+  <div class="fsec-head">👨‍👩‍👧 4. Family Information</div>
+  <div class="fsec-body">
+    <p class="sub-head">Parents</p>
+    <div class="g2">
+      <div class="field"><label>Father's Full Name</label><input id="fatherName" type="text"></div>
+      <div class="field"><label>Father's Occupation</label><input id="fatherOcc" type="text"></div>
+    </div>
+    <div class="g2">
+      <div class="field"><label>Mother's Full Name</label><input id="motherName" type="text"></div>
+      <div class="field"><label>Mother's Occupation</label><input id="motherOcc" type="text"></div>
+    </div>
+    <hr class="div">
+    <p class="sub-head">Emergency Contact</p>
+    <div class="g2">
+      <div class="field"><label>Name</label><input id="emergName" type="text"></div>
+      <div class="field"><label>Relationship</label><input id="emergRel" type="text"></div>
+    </div>
+    <div class="g2">
+      <div class="field"><label>Address</label><input id="emergAddr" type="text"></div>
+      <div class="field"><label>Tel / Cell Number</label><input id="emergTel" type="tel"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. MS Completed -->
+<div class="fsec">
+  <div class="fsec-head">🎖️ 5. Military Science Completed</div>
+  <div class="fsec-body">
+    <div class="ms-wrap">
+      <table class="ms-entry" id="ms-entry-tbl">
+        <thead><tr>
+          <th style="width:12%">MS</th><th style="width:18%">Semester</th>
+          <th style="width:26%">School Year</th><th style="width:14%">Grade</th>
+          <th style="width:24%">Remarks</th><th style="width:6%"></th>
+        </tr></thead>
+        <tbody id="ms-tbody"></tbody>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addMSRow()">+ Add Row</button>
+  </div>
+</div>
+
+<!-- 6. Educational Background -->
+<div class="fsec">
+  <div class="fsec-head">🎓 6. Educational Background</div>
+  <div class="fsec-body">
+    <p class="sub-head">Elementary</p>
+    <div class="g3">
+      <div class="field"><label>Name of School</label><input id="elemSchool" type="text"></div>
+      <div class="field"><label>Location</label><input id="elemLoc" type="text"></div>
+      <div class="field"><label>Date of Attendance</label><input id="elemDate" type="text" placeholder="e.g. 2015–2021"></div>
+    </div>
+    <div class="g3">
+      <div class="field"><label>General Average</label><input id="elemAve" type="text"></div>
+      <div class="field"><label>Honors Received</label><input id="elemHonors" type="text"></div>
+      <div class="field"><label>Clubs / Org / Affiliations (Position)</label><input id="elemClubs" type="text"></div>
+    </div>
+    <hr class="div">
+    <p class="sub-head">High School</p>
+    <div class="g3">
+      <div class="field"><label>Name of School</label><input id="hsSchool" type="text"></div>
+      <div class="field"><label>Location</label><input id="hsLoc" type="text"></div>
+      <div class="field"><label>Date of Attendance</label><input id="hsDate" type="text" placeholder="e.g. 2021–2025"></div>
+    </div>
+    <div class="g3">
+      <div class="field"><label>General Average</label><input id="hsAve" type="text"></div>
+      <div class="field"><label>Honors Received</label><input id="hsHonors" type="text"></div>
+      <div class="field"><label>Clubs / Org / Affiliations (Position)</label><input id="hsClubs" type="text"></div>
+    </div>
+    <hr class="div">
+    <p class="sub-head">College</p>
+    <div class="g3">
+      <div class="field"><label>Name of School</label><input id="collSchool" type="text"></div>
+      <div class="field"><label>Location</label><input id="collLoc" type="text"></div>
+      <div class="field"><label>Date of Attendance</label><input id="collDate" type="text" placeholder="e.g. 2025–present"></div>
+    </div>
+    <div class="g3">
+      <div class="field"><label>General Average</label><input id="collAve" type="text"></div>
+      <div class="field"><label>Honors Received</label><input id="collHonors" type="text"></div>
+      <div class="field"><label>Clubs / Org / Affiliations (Position)</label><input id="collClubs" type="text"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Other Info -->
+<div class="fsec">
+  <div class="fsec-head">📝 7. Other Personal Information</div>
+  <div class="fsec-body">
+    <div class="g1">
+      <div class="field"><label>Hobbies (Writing, Essay, Poetry, Sports, etc.)</label>
+        <textarea id="hobbies" placeholder="List your hobbies..."></textarea></div>
+    </div>
+    <hr class="div">
+    <p class="sub-head">Advance ROTC / POTC Intent</p>
+    <div class="field">
+      <label>Do you intend to take the Advance ROTC / POTC and pursue a military career?</label>
+      <div class="rg">
+        <label><input type="radio" name="advRotc" id="advYes" value="Yes"> Yes</label>
+        <label><input type="radio" name="advRotc" id="advNo"  value="No">  No</label>
+      </div>
+    </div>
+    <div class="field" style="margin-top:8px"><label>Why?</label>
+      <textarea id="advWhy" placeholder="Explain your reason..."></textarea></div>
+  </div>
+</div>
+
+<!-- 8. Registration Details -->
+<div class="fsec">
+  <div class="fsec-head">📋 8. Registration Slip Details</div>
+  <div class="fsec-body">
+    <div class="g3">
+      <div class="field"><label>Student Number</label><input id="studNo" type="text" placeholder="e.g. 2025-0001"></div>
+      <div class="field"><label>MS Level</label>
+        <select id="msLevel"><option value="">— select —</option>
+          <option>MS 1</option><option>MS 2</option><option>MS 3</option><option>MS 4</option>
+        </select></div>
+      <div class="field"><label>Date of Enrollment</label><input id="enrollDate" type="date"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. RDC -->
+<div class="fsec">
+  <div class="fsec-head">🪪 9. Record Data Card Details</div>
+  <div class="fsec-body">
+    <div class="g3">
+      <div class="field"><label>Rank (if none, leave blank)</label><input id="rank" type="text" placeholder="e.g. PFC / None"></div>
+      <div class="field"><label>Branch / Service (BR/SVC)</label><input id="brsvc" type="text"></div>
+      <div class="field"><label>AFPSN</label><input id="afpsn" type="text"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 10. Cert -->
+<div class="fsec">
+  <div class="fsec-head">📜 10. Certification Details <span style="font-weight:400;font-size:.76rem;opacity:.7">(Admin fills)</span></div>
+  <div class="fsec-body">
+    <div class="g4">
+      <div class="field"><label>MS Level</label>
+        <select id="certMS"><option value="">—</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+        </select></div>
+      <div class="field"><label>Basic / Advance</label>
+        <select id="certType"><option value="Basic">Basic</option><option value="Advance">Advance</option></select></div>
+      <div class="field"><label>Semester</label>
+        <select id="certSem"><option value="">—</option>
+          <option value="1st">1st</option><option value="2nd">2nd</option><option value="Summer">Summer</option>
+        </select></div>
+      <div class="field"><label>School Year</label><input id="certSY" type="text" placeholder="e.g. 2025–2026"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Action Buttons -->
+<div class="action-bar">
+  <button class="btn-main btn-print"   onclick="doPrint()">🖨️&nbsp; Print All Forms</button>
+  <button class="btn-main btn-preview" onclick="doPreview()">👁️&nbsp; Preview Forms</button>
+  <button class="btn-main btn-clear"   onclick="clearAll()">✕&nbsp; Clear All</button>
+</div>
+</div><!-- /main-wrap -->
+</div><!-- /entry-section -->
+
+<!-- Preview sticky bar -->
+<div id="preview-bar">
+  <span>👁️ Preview — scroll down to review all 4 forms</span>
+  <div>
+    <button class="pb-btn pb-print" onclick="doPrint()">🖨️ Print</button>
+    <button class="pb-btn pb-close" onclick="closePreview()">✕ Close</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PRINT DOCUMENT
+═══════════════════════════════════════════════════════ -->
+<div id="print-section" class="print-doc">
+
+<!-- Header/Footer templates -->
+<template id="tpl-hdr">
+  <div class="pg-hdr">
+    <div class="army-motto">ARMY 2040: WORLD-CLASS. MULTI-MISSION READY. CROSS-DOMAIN CAPABLE</div>
+    <div class="dept-row">
+      <img src="img2.png" class="dept-logo" alt="">
+      <div class="dept-txt">
+        <div class="d1">DEPARTMENT OF MILITARY SCIENCE AND TACTICS</div>
+        <div class="d2">LAPU-LAPU CITY COLLEGE ROTC UNIT</div>
+        <div class="d3">701st (CEB) CDC, 7RCDG, RESCOM</div>
+        <div class="d4">Carajay, Gun-ob, Lapu-lapu City</div>
+      </div>
+      <img src="img1.png" class="dept-logo" alt="">
+    </div>
+    <hr class="hdr-rule">
+  </div>
+</template>
+
+<template id="tpl-ftr">
+  <div class="pg-ftr">
+    <hr class="ftr-rule">
+    <div class="honor-txt">HONOR. PATRIOTISM. DUTY</div>
+  </div>
+</template>
+
+
+<!-- ══════════════════════════
+     PAGE 1 — CIS Part 1
+══════════════════════════ -->
+<div class="print-page" id="page1">
+  <div id="p1-hdr"></div>
+
+  <div class="doc-title">Cadet Information Sheet</div>
+
+  <!-- Name row -->
+  <div style="margin-bottom:1mm">
+    <span class="fl">Name:</span>
+    &nbsp;<span class="fv l" data-f="lastName"></span>
+    &nbsp;<span class="fv l" data-f="firstName"></span>
+    &nbsp;<span class="fv l" data-f="middleName"></span>
+  </div>
+  <div style="font-size:6.5pt;margin-bottom:1.5mm;padding-left:11mm;display:flex;gap:0">
+    <span style="display:inline-block;width:47mm;text-align:center">(Last Name)</span>
+    <span style="display:inline-block;width:47mm;text-align:center">(Fist Name)</span>
+    <span style="display:inline-block;width:47mm;text-align:center">(Middle Name)</span>
+  </div>
+
+  <div class="slbl">Temporary Address:</div>
+  <div class="fr ind"><span class="fl">No/St/Vill/Brgy:</span> <span class="fv xl" data-f="tmpStreet"></span></div>
+  <div class="fr ind"><span class="fl">Municipality:</span> <span class="fv l" data-f="tmpCity"></span></div>
+  <div class="fr ind"><span class="fl">Province:</span> <span class="fv l" data-f="tmpProvince"></span></div>
+  <div class="fr ind"><span class="fl">Telephone/Cell Number:</span> <span class="fv l" data-f="tmpTel"></span></div>
+
+  <div class="fr">
+    <span class="fl">Course:</span> <span class="fv m" data-f="course"></span>
+    &nbsp;&nbsp;<span class="fl">School:</span> <span class="fv l" data-f="school"></span>
+    &nbsp;&nbsp;<span class="fl">Religion:</span> <span class="fv m" data-f="religion"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Date of Birth:</span> <span class="fv l" data-f="dobFmt"></span>
+    &nbsp;&nbsp;<span class="fl">Place of Birth:</span> <span class="fv xl" data-f="pob"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Height:</span> <span class="fv s" data-f="height"></span>
+    &nbsp;<span class="fl">Weight:</span> <span class="fv s" data-f="weight"></span>
+    &nbsp;<span class="fl">Complexion:</span> <span class="fv m" data-f="complexion"></span>
+    &nbsp;<span class="fl">Blood Type</span> <span class="fv xs" data-f="bloodType"></span>
+  </div>
+
+  <div class="slbl">Permanent Address:</div>
+  <div class="fr ind"><span class="fl">No/St/Vill/Brgy:</span> <span class="fv xl" data-f="permStreet"></span></div>
+  <div class="fr ind"><span class="fl">Municipality:</span> <span class="fv l" data-f="permCity"></span></div>
+  <div class="fr ind"><span class="fl">Province:</span> <span class="fv l" data-f="permProvince"></span></div>
+  <div class="fr ind"><span class="fl">Telephone/Cell Number:</span> <span class="fv l" data-f="permTel"></span></div>
+
+  <div class="fr">
+    <span class="fl">Father:</span> <span class="fv l" data-f="fatherName"></span>
+    &nbsp;&nbsp;<span class="fl">Occupation:</span> <span class="fv l" data-f="fatherOcc"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Mother:</span> <span class="fv l" data-f="motherName"></span>
+    &nbsp;&nbsp;<span class="fl">Occupation:</span> <span class="fv l" data-f="motherOcc"></span>
+  </div>
+  <div class="fr"><span class="fl">Person to be notify in case of emergency:</span></div>
+  <div class="fr ind">
+    <span class="fl">Name:</span> <span class="fv l" data-f="emergName"></span>
+    &nbsp;&nbsp;<span class="fl">Relationship:</span> <span class="fv l" data-f="emergRel"></span>
+  </div>
+  <div class="fr ind">
+    <span class="fl">Address:</span> <span class="fv xl" data-f="emergAddr"></span>
+    &nbsp;&nbsp;<span class="fl">Tel No:</span> <span class="fv l" data-f="emergTel"></span>
+  </div>
+
+  <div class="slbl">Military Science Completed:</div>
+  <table class="tbl-ms"><thead><tr>
+    <th class="c1">MS</th><th class="c2">SEMESTER</th><th class="c3">SCHOOL YEAR</th>
+    <th class="c4">GRADE</th><th class="c5">REMARKS</th>
+  </tr></thead><tbody id="p1-ms"></tbody></table>
+
+  <div class="slbl" style="margin-top:2mm">Educational Background:</div>
+
+  <div class="edu-lbl">a. Elementary:</div>
+  <table class="tbl-edu"><thead><tr>
+    <th class="tc1">Name of School</th><th class="tc2">Location</th><th class="tc3">Date of Attendance</th>
+  </tr></thead><tbody><tr>
+    <td data-f="elemSchool">&nbsp;</td><td data-f="elemLoc">&nbsp;</td><td data-f="elemDate">&nbsp;</td>
+  </tr></tbody></table>
+  <div class="fr" style="margin-left:4mm"><span class="fl">General Average:</span> <span class="fv m" data-f="elemAve"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Honors Received:</span> <span class="fv xxl" data-f="elemHonors"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Clubs, Organization and other Affiliations (Indicate Position):</span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fv full" data-f="elemClubs"></span></div>
+
+  <div class="edu-lbl" style="margin-top:1.5mm">b. High School:</div>
+  <table class="tbl-edu"><thead><tr>
+    <th class="tc1">Name of School</th><th class="tc2">Location</th><th class="tc3">Date of Attendance</th>
+  </tr></thead><tbody><tr>
+    <td data-f="hsSchool">&nbsp;</td><td data-f="hsLoc">&nbsp;</td><td data-f="hsDate">&nbsp;</td>
+  </tr></tbody></table>
+  <div class="fr" style="margin-left:4mm"><span class="fl">General Average:</span> <span class="fv m" data-f="hsAve"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Honors Received:</span> <span class="fv xxl" data-f="hsHonors"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Clubs, Organization and other Affiliations (Indicate Position):</span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fv full" data-f="hsClubs"></span></div>
+
+  <div id="p1-ftr"></div>
+</div><!-- /page1 -->
+
+
+<!-- ══════════════════════════
+     PAGE 2 — CIS Part 2
+══════════════════════════ -->
+<div class="print-page" id="page2">
+  <div id="p2-hdr"></div>
+
+  <div class="edu-lbl">c. College:</div>
+  <table class="tbl-edu"><thead><tr>
+    <th class="tc1">Name of School</th><th class="tc2">Location</th><th class="tc3">Date of Attendance</th>
+  </tr></thead><tbody><tr>
+    <td data-f="collSchool">&nbsp;</td><td data-f="collLoc">&nbsp;</td><td data-f="collDate">&nbsp;</td>
+  </tr></tbody></table>
+  <div class="fr" style="margin-left:4mm"><span class="fl">General Average:</span> <span class="fv m" data-f="collAve"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Honors Received:</span> <span class="fv xxl" data-f="collHonors"></span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fl">Clubs, Organization and other Affiliations (Indicate Position):</span></div>
+  <div class="fr" style="margin-left:4mm"><span class="fv full" data-f="collClubs"></span></div>
+
+  <div class="slbl" style="margin-top:2mm">Other personal information:</div>
+  <div class="fr"><span class="fl">Hobbies:</span> <span style="font-size:8pt;font-style:italic">(Writing, Essay, Poetry, etc.)</span></div>
+  <div class="fr"><span class="fv full" data-f="hobbies"></span></div>
+
+  <div style="height:2mm"></div>
+  <div class="fr">Do you intend to take the Advance ROTC/Probationary Training Course (POTC) and pursue a military career?</div>
+  <div class="fr" style="padding-left:30mm">
+    (<span data-f="advYesMk"></span>)&nbsp;<strong>Yes</strong>
+    &nbsp;&nbsp;(<span data-f="advNoMk"></span>)&nbsp;<strong>No</strong>
+  </div>
+  <div class="fr"><span class="fl">Why?</span></div>
+  <div class="fr"><span class="fv full" data-f="advWhy"></span></div>
+  <div class="fr"><span class="fv full"></span></div>
+  <div style="height:2mm"></div>
+
+  <div class="fr">This is to certify that the above data is true and correct:</div>
+
+  <div style="display:flex;align-items:flex-start;margin-top:5mm">
+    <!-- Left: 2x2 + thumbmarks stacked -->
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div class="photo-box-2x2">2×2</div>
+      <div class="thumb-row" style="margin-top:3mm">
+        <div class="thumb-item">
+          <div class="thumb-box"></div>
+          <div class="thumb-lbl">Left</div>
+        </div>
+        <div class="thumb-item">
+          <div class="thumb-box"></div>
+          <div class="thumb-lbl">Right</div>
+        </div>
+      </div>
+      <div class="thumb-title">Thumb Mark</div>
+    </div>
+    <!-- Right: signature centered -->
+    <div class="sig-right">
+      <div class="sig-line"></div>
+      <div class="sig-cap">(Signature of Student)</div>
+    </div>
+  </div>
+
+  <div id="p2-ftr"></div>
+</div><!-- /page2 -->
+
+
+<!-- ══════════════════════════
+     PAGE 3 — Reg Form + Cert
+══════════════════════════ -->
+<div class="print-page" id="page3">
+  <div id="p3-hdr"></div>
+
+  <div class="doc-title">ROTC Registration Form/Slip</div>
+  <div class="doc-subtitle">(Print all Entries)</div>
+
+  <div class="fr">
+    <span class="fl">Student Nr:</span> <span class="fv m" data-f="studNo"></span>
+    &nbsp;&nbsp;&nbsp;<span class="fl">MS:</span> <span class="fv s" data-f="msLevel"></span>
+    &nbsp;&nbsp;&nbsp;<span class="fl">Date:</span> <span class="fv l" data-f="enrollFmt"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Name:</span>
+    <span style="display:inline-block;white-space:nowrap">&nbsp;<span class="fv m" data-f="lastName"></span><span style="font-size:6.5pt">&nbsp;(Last Name)</span></span>
+    <span style="display:inline-block;white-space:nowrap">&nbsp;<span class="fv m" data-f="firstName"></span><span style="font-size:6.5pt">&nbsp;(First Name)</span></span>
+    <span style="display:inline-block;white-space:nowrap">&nbsp;<span class="fv m" data-f="middleName"></span><span style="font-size:6.5pt">&nbsp;(Middle Name)</span></span>
+  </div>
+
+  <div class="slbl">Temporary Address:</div>
+  <div class="fr ind"><span class="fl">No/St/Vill/Brgy:</span> <span class="fv xl" data-f="tmpStreet"></span></div>
+  <div class="fr ind"><span class="fl">Municipality:</span> <span class="fv l" data-f="tmpCity"></span></div>
+  <div class="fr ind"><span class="fl">Province:</span> <span class="fv l" data-f="tmpProvince"></span></div>
+  <div class="fr ind"><span class="fl">Telephone/Cell Number:</span> <span class="fv l" data-f="tmpTel"></span></div>
+
+  <div class="fr">
+    <span class="fl">Course:</span> <span class="fv m" data-f="course"></span>
+    &nbsp;&nbsp;<span class="fl">School:</span> <span class="fv l" data-f="school"></span>
+    &nbsp;&nbsp;<span class="fl">Religion:</span> <span class="fv m" data-f="religion"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Date of Birth:</span> <span class="fv l" data-f="dobFmt"></span>
+    &nbsp;&nbsp;<span class="fl">Place of Birth:</span> <span class="fv xl" data-f="pob"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Height:</span> <span class="fv s" data-f="height"></span>
+    &nbsp;<span class="fl">Weight:</span> <span class="fv s" data-f="weight"></span>
+    &nbsp;<span class="fl">Complexion:</span> <span class="fv m" data-f="complexion"></span>
+    &nbsp;<span class="fl">Blood Type:</span> <span class="fv xs" data-f="bloodType"></span>
+  </div>
+
+  <div class="slbl">Permanent Address:</div>
+  <div class="fr ind"><span class="fl">No/St/Vill/Brgy:</span> <span class="fv xl" data-f="permStreet"></span></div>
+  <div class="fr ind"><span class="fl">Municipality:</span> <span class="fv l" data-f="permCity"></span></div>
+  <div class="fr ind"><span class="fl">Province:</span> <span class="fv l" data-f="permProvince"></span></div>
+  <div class="fr ind"><span class="fl">Region:</span> <span class="fv l" data-f="permRegion"></span></div>
+  <div class="fr ind"><span class="fl">Telephone/Cell Number:</span> <span class="fv l" data-f="permTel"></span></div>
+
+  <div class="fr">
+    <span class="fl">Father:</span> <span class="fv l" data-f="fatherName"></span>
+    &nbsp;&nbsp;<span class="fl">Occupation:</span> <span class="fv l" data-f="fatherOcc"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Mother:</span> <span class="fv l" data-f="motherName"></span>
+    &nbsp;&nbsp;<span class="fl">Occupation:</span> <span class="fv l" data-f="motherOcc"></span>
+  </div>
+  <div class="fr">
+    <span class="fl">Person to</span> <span class="fv l" data-f="emergName"></span>
+    <span class="fl">be notify in case of emergency:</span>
+  </div>
+  <div class="fr ind">
+    <span class="fl">Relationship:</span> <span class="fv m" data-f="emergRel"></span>
+    &nbsp;&nbsp;<span class="fl">Address:</span> <span class="fv xl" data-f="emergAddr"></span>
+  </div>
+  <div class="fr ind"><span class="fl">Tel No:</span> <span class="fv l" data-f="emergTel"></span></div>
+
+  <div class="slbl">Military Science Completed:</div>
+  <table class="tbl-ms"><thead><tr>
+    <th class="c1">MS</th><th class="c2">SEMESTER</th><th class="c3">SCHOOL YEAR</th>
+    <th class="c4">GRADE</th><th class="c5">REMARKS</th>
+  </tr></thead><tbody id="p3-ms"></tbody></table>
+
+  <div class="fr" style="margin-top:2mm">
+    Are you willing to take the advance course?
+    &nbsp;(<span data-f="advYesMk"></span>)&nbsp;<strong>Yes</strong>
+    &nbsp;(<span data-f="advNoMk"></span>)&nbsp;<strong>No</strong>
+  </div>
+
+  <div style="display:flex;justify-content:flex-end;margin-top:6mm;margin-bottom:1mm">
+    <div style="text-align:center">
+      <div style="border-top:.75pt solid #000;width:65mm;margin-bottom:2mm"></div>
+      <div style="font-size:8pt">(Signature of Student)</div>
+    </div>
+  </div>
+
+  <!-- ── Certification ── -->
+  <div class="cert-hdr">
+    <div class="dept-row">
+      <img src="img2.png" class="dept-logo" style="width:18mm;height:18mm" alt="">
+      <div class="dept-txt">
+        <div class="d1">DEPARTMENT OF MILITARY SCIENCE AND TACTICS</div>
+        <div class="d2">LAPU-LAPU CITY COLLEGE ROTC UNIT</div>
+        <div class="d3">701<sup>st</sup> (CEB) CDC, 7RCDG, ARESCOM</div>
+        <div class="d4">STEC, Basak, Lapu-lapu City</div>
+      </div>
+      <img src="img1.png" class="dept-logo" style="width:18mm;height:18mm" alt="">
+    </div>
+  </div>
+
+  <div class="cert-llcc">LLCC ROTCU</div>
+  <div class="cert-title">C E R T I F I C A T I O N</div>
+  <div class="cert-concern">TO WHOM IT MAY CONCERN:</div>
+  <div class="cert-body">
+    THIS IS TO CERTIFY that <span class="fv l" data-f="fullName"></span>
+    from College of <span class="fv l" data-f="school"></span>
+    is duly registered in the MS <span class="fv xs" data-f="certMS"></span>
+    <span data-f="certType"></span> ROTC Program for the
+    <span class="fv s" data-f="certSem"></span> semester,
+    School Year <span class="fv m" data-f="certSY"></span>.
+  </div>
+
+  <div class="cert-sig-area">
+    <div class="cert-sig-line"></div>
+    <div class="cert-name">ARTHUR B ARQUIOLA</div>
+    <div class="cert-rank">TSg(MI)PA</div>
+    <div class="cert-rank">Admin NCO</div>
+  </div>
+
+  <div id="p3-ftr"></div>
+</div><!-- /page3 -->
+
+
+<!-- ══════════════════════════
+     PAGE 4 — Record Data Cards
+══════════════════════════ -->
+<div class="print-page" id="page4">
+  <div id="p4-hdr"></div>
+
+  <div class="rdc-wrapper">
+
+    <!-- Card 1 -->
+    <div class="rdc">
+      <img src="img3.jpg" class="rdc-bg" alt="">
+      <div class="rdc-content">
+        <div class="rdc-top">
+          DEPARTMENT OF MILITARY SCIENCE AND TACTICS<br>
+          LAPU-LAPU CITY COLLEGE ROTC UNIT<br>
+          701<sup>ST</sup> (Cebu) CDC, 7RCDG, ARESCOM
+        </div>
+        <div class="rdc-title">ROTC Record Data Card</div>
+        <div class="rdc-sub">(Print all entries)</div>
+        <div class="fr">
+          <span class="fl">NAME:</span>
+          &nbsp;<span class="fv m" data-f="lastName"></span><span style="font-size:7pt">(Last Name)</span>
+          &nbsp;<span class="fv m" data-f="firstName"></span><span style="font-size:7pt">(First Name)</span>
+          &nbsp;<span class="fv m" data-f="middleName"></span><span style="font-size:7pt">(Middle Name)</span>
+        </div>
+        <div class="fr">
+          <span class="fl">RANK:</span> <span class="fv m" data-f="rank"></span>
+          &nbsp;&nbsp;<span class="fl">BR/SVC:</span> <span class="fv l" data-f="brsvc"></span>
+          &nbsp;&nbsp;<span class="fl">AFPSN:</span> <span class="fv l" data-f="afpsn"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Date of birth:</span> <span class="fv l" data-f="dobFmt"></span>
+          &nbsp;&nbsp;<span class="fl">Age:</span> <span class="fv xs" data-f="age"></span>
+          &nbsp;&nbsp;<span class="fl">Civil Status:</span> <span class="fv l" data-f="civilStatus"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Adress/es:</span> <span class="fv xxl" data-f="permStreet"></span>
+          &nbsp;&nbsp;<span class="fl">BT:</span> <span class="fv xs" data-f="bloodType"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Religion:</span> <span class="fv l" data-f="religion"></span>
+          &nbsp;&nbsp;<span class="fl">Course:</span> <span class="fv l" data-f="course"></span>
+          &nbsp;&nbsp;<span class="fl">Sex:</span> <span class="fv xs" data-f="sex"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 (duplicate) -->
+    <div class="rdc">
+      <img src="img4.jpg" class="rdc-bg" alt="">
+      <div class="rdc-content">
+        <div class="rdc-top">
+          DEPARTMENT OF MILITARY SCIENCE AND TACTICS<br>
+          LAPU-LAPU CITY COLLEGE ROTC UNIT<br>
+          701<sup>ST</sup> (Cebu) CDC, 7RCDG, ARESCOM
+        </div>
+        <div class="rdc-title">ROTC Record Data Card</div>
+        <div class="rdc-sub">(Print all entries)</div>
+        <div class="fr">
+          <span class="fl">NAME:</span>
+          &nbsp;<span class="fv m" data-f="lastName"></span><span style="font-size:7pt">(Last Name)</span>
+          &nbsp;<span class="fv m" data-f="firstName"></span><span style="font-size:7pt">(First Name)</span>
+          &nbsp;<span class="fv m" data-f="middleName"></span><span style="font-size:7pt">(Middle Name)</span>
+        </div>
+        <div class="fr">
+          <span class="fl">RANK:</span> <span class="fv m" data-f="rank"></span>
+          &nbsp;&nbsp;<span class="fl">BR/SVC:</span> <span class="fv l" data-f="brsvc"></span>
+          &nbsp;&nbsp;<span class="fl">AFPSN:</span> <span class="fv l" data-f="afpsn"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Date of birth:</span> <span class="fv l" data-f="dobFmt"></span>
+          &nbsp;&nbsp;<span class="fl">Age:</span> <span class="fv xs" data-f="age"></span>
+          &nbsp;&nbsp;<span class="fl">Civil Status:</span> <span class="fv l" data-f="civilStatus"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Adress/es:</span> <span class="fv xxl" data-f="permStreet"></span>
+          &nbsp;&nbsp;<span class="fl">BT:</span> <span class="fv xs" data-f="bloodType"></span>
+        </div>
+        <div class="fr">
+          <span class="fl">Religion:</span> <span class="fv l" data-f="religion"></span>
+          &nbsp;&nbsp;<span class="fl">Course:</span> <span class="fv l" data-f="course"></span>
+          &nbsp;&nbsp;<span class="fl">Sex:</span> <span class="fv xs" data-f="sex"></span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /rdc-wrapper -->
+
+  <div id="p4-ftr"></div>
+</div><!-- /page4 -->
+
+</div><!-- /print-section -->
+
+
+<!-- ══════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════ -->
+<script>
+// Inject headers & footers into each page
+(function(){
+  var hH = document.getElementById('tpl-hdr').innerHTML;
+  var fH = document.getElementById('tpl-ftr').innerHTML;
+  ['p1','p2','p3','p4'].forEach(function(p){
+    document.getElementById(p+'-hdr').innerHTML = hH;
+    document.getElementById(p+'-ftr').innerHTML = fH;
+  });
+})();
+
+// MS Entry Table
+var MS_OPTS  = ['MS 1','MS 2','MS 3','MS 4'];
+var SEM_OPTS = ['1st Semester','2nd Semester','Summer'];
+
+function addMSRow(d){
+  d = d || {};
+  var tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><select onchange="sync()">' +
+      '<option value=""></option>' +
+      MS_OPTS.map(function(o){ return '<option'+(d.ms===o?' selected':'')+'>'+o+'</option>'; }).join('') +
+    '</select></td>' +
+    '<td><select onchange="sync()">' +
+      '<option value=""></option>' +
+      SEM_OPTS.map(function(o){ return '<option'+(d.sem===o?' selected':'')+'>'+o+'</option>'; }).join('') +
+    '</select></td>' +
+    '<td><input type="text" value="'+(d.sy||'')+'" placeholder="e.g. 2024-2025" oninput="sync()"></td>' +
+    '<td><input type="text" value="'+(d.grade||'')+'" oninput="sync()"></td>' +
+    '<td><input type="text" value="'+(d.remarks||'')+'" oninput="sync()"></td>' +
+    '<td style="text-align:center"><button class="btn-rm" onclick="rmRow(this)">✕</button></td>';
+  document.getElementById('ms-tbody').appendChild(tr);
+}
+function rmRow(btn){ btn.closest('tr').remove(); sync(); }
+for(var i=0;i<4;i++) addMSRow();
+
+// Helpers
+function v(id){ var el=document.getElementById(id); return el?el.value.trim():''; }
+function fmtDate(s){
+  if(!s) return '';
+  var d=new Date(s+'T00:00:00');
+  if(isNaN(d.getTime())) return s;
+  return d.toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'});
+}
+function calcAge(s){
+  if(!s) return '';
+  var b=new Date(s+'T00:00:00'), t=new Date();
+  if(isNaN(b.getTime())) return '';
+  var a=t.getFullYear()-b.getFullYear();
+  if(t.getMonth()<b.getMonth()||(t.getMonth()===b.getMonth()&&t.getDate()<b.getDate())) a--;
+  return a>0?String(a):'';
+}
+function getMSRows(){
+  var rows=[];
+  document.getElementById('ms-tbody').querySelectorAll('tr').forEach(function(tr){
+    var s=tr.querySelectorAll('select'), inp=tr.querySelectorAll('input[type=text]');
+    rows.push({
+      ms: s[0]?s[0].value:'', sem:s[1]?s[1].value:'',
+      sy: inp[0]?inp[0].value:'', grade:inp[1]?inp[1].value:'', remarks:inp[2]?inp[2].value:''
+    });
+  });
+  return rows;
+}
+
+function getData(){
+  var ln=v('lastName').toUpperCase(), fn=v('firstName'), mn=v('middleName');
+  var fullName = ln?(fn||mn?ln+', '+[fn,mn].filter(Boolean).join(' '):ln):'';
+  var adv=document.querySelector('input[name="advRotc"]:checked');
+  return {
+    fullName:fullName,
+    lastName:ln, firstName:fn.toUpperCase(), middleName:mn.toUpperCase(),
+    dobFmt:fmtDate(v('dob')), age:calcAge(v('dob')), pob:v('pob'),
+    bloodType:v('bloodType'), complexion:v('complexion'),
+    height:v('height'), weight:v('weight'), sex:v('sex'), civilStatus:v('civilStatus'),
+    course:v('course'), school:v('school'), religion:v('religion'),
+    tmpStreet:v('tmpStreet'), tmpCity:v('tmpCity'), tmpProvince:v('tmpProvince'), tmpTel:v('tmpTel'),
+    permStreet:v('permStreet'), permCity:v('permCity'), permProvince:v('permProvince'),
+    permRegion:v('permRegion'), permTel:v('permTel'),
+    fatherName:v('fatherName'), fatherOcc:v('fatherOcc'),
+    motherName:v('motherName'), motherOcc:v('motherOcc'),
+    emergName:v('emergName'), emergRel:v('emergRel'), emergAddr:v('emergAddr'), emergTel:v('emergTel'),
+    elemSchool:v('elemSchool'), elemLoc:v('elemLoc'), elemDate:v('elemDate'),
+    elemAve:v('elemAve'), elemHonors:v('elemHonors'), elemClubs:v('elemClubs'),
+    hsSchool:v('hsSchool'), hsLoc:v('hsLoc'), hsDate:v('hsDate'),
+    hsAve:v('hsAve'), hsHonors:v('hsHonors'), hsClubs:v('hsClubs'),
+    collSchool:v('collSchool'), collLoc:v('collLoc'), collDate:v('collDate'),
+    collAve:v('collAve'), collHonors:v('collHonors'), collClubs:v('collClubs'),
+    hobbies:v('hobbies'),
+    advYesMk:adv&&adv.value==='Yes'?'✓':'',
+    advNoMk: adv&&adv.value==='No' ?'✓':'',
+    advWhy:v('advWhy'),
+    studNo:v('studNo'), msLevel:v('msLevel'), enrollFmt:fmtDate(v('enrollDate')),
+    rank:v('rank'), brsvc:v('brsvc'), afpsn:v('afpsn'),
+    certMS:v('certMS'), certType:v('certType'), certSem:v('certSem'), certSY:v('certSY'),
+  };
+}
+
+function sync(){
+  var data=getData();
+  // Fill all [data-f] elements
+  document.querySelectorAll('[data-f]').forEach(function(el){
+    var k=el.getAttribute('data-f');
+    if(k in data) el.textContent=data[k]||'';
+  });
+  // Rebuild MS tables
+  var rows=getMSRows(), MIN=4, padded=rows.slice();
+  while(padded.length<MIN) padded.push({ms:'',sem:'',sy:'',grade:'',remarks:''});
+  var html=padded.map(function(r){
+    return '<tr><td>'+r.ms+'</td><td>'+r.sem+'</td><td>'+r.sy+'</td><td>'+r.grade+'</td><td>'+r.remarks+'</td></tr>';
+  }).join('');
+  ['p1-ms','p3-ms'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.innerHTML=html;
+  });
+}
+
+// Attach listeners
+document.querySelectorAll('#entry-section input,#entry-section select,#entry-section textarea')
+  .forEach(function(el){ el.addEventListener('input',sync); el.addEventListener('change',sync); });
+
+function doPreview(){
+  sync();
+  document.getElementById('print-section').classList.add('visible');
+  document.getElementById('preview-bar').classList.add('visible');
+  setTimeout(function(){
+    document.getElementById('print-section').scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+}
+function closePreview(){
+  document.getElementById('print-section').classList.remove('visible');
+  document.getElementById('preview-bar').classList.remove('visible');
+  document.getElementById('entry-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function doPrint(){ sync(); window.print(); }
+function clearAll(){
+  if(!confirm('Clear all data? This cannot be undone.')) return;
+  document.querySelectorAll('#entry-section input[type=text],#entry-section input[type=tel],#entry-section input[type=date],#entry-section select,#entry-section textarea')
+    .forEach(function(el){ el.value=''; });
+  document.querySelectorAll('input[type=radio]').forEach(function(el){ el.checked=false; });
+  document.getElementById('ms-tbody').innerHTML='';
+  for(var i=0;i<4;i++) addMSRow();
+  sync();
+}
+
+sync();
+</script>
+</body>
+</html>

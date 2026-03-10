@@ -1,0 +1,375 @@
+/* ═══════════════════════════════════════════════════
+   SCREEN — ENTRY FORM  (Military Theme)
+═══════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+
+@media screen {
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background-color:#1a1e14;
+    background-image:
+      repeating-linear-gradient(0deg,  rgba(0,0,0,.07) 0px, rgba(0,0,0,.07) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.07) 0px, rgba(0,0,0,.07) 1px, transparent 1px, transparent 40px);
+    color:#dde4c8;
+    min-height:100vh;
+  }
+
+  /* ── TOP HEADER ── */
+  .app-header{
+    background:linear-gradient(180deg,#0f1a08 0%,#1e2d10 60%,#253515 100%);
+    color:#e8dfa8;
+    padding:0 22px;
+    display:flex;align-items:center;gap:14px;
+    position:sticky;top:0;z-index:100;
+    border-bottom:3px solid #c8a828;
+    box-shadow:0 4px 20px rgba(0,0,0,.6);
+    min-height:64px;
+  }
+  .app-header::before{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(
+      45deg,transparent,transparent 6px,rgba(255,255,255,.012) 6px,rgba(255,255,255,.012) 12px
+    );pointer-events:none;
+  }
+  .app-header .logo{
+    width:50px;height:50px;border-radius:50%;object-fit:contain;
+    border:2px solid #c8a828;
+    box-shadow:0 0 10px rgba(200,168,40,.4);
+    flex-shrink:0;position:relative;z-index:1;
+  }
+  .app-header .title-wrap{flex:1;position:relative;z-index:1}
+  .app-header h1{
+    font-size:1.05rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:#e8dfa8;text-shadow:1px 1px 4px rgba(0,0,0,.6);line-height:1.3;
+  }
+  .app-header p{font-size:.72rem;opacity:.75;margin-top:2px;letter-spacing:.5px;color:#b8c890}
+
+  /* ── PREVIEW BAR ── */
+  #preview-bar{
+    display:none;position:sticky;top:0;z-index:99;
+    background:linear-gradient(90deg,#1a2e0a,#2a4a10);
+    color:#e8dfa8;
+    padding:9px 18px;align-items:center;justify-content:space-between;
+    border-bottom:2px solid #c8a828;
+    box-shadow:0 3px 10px rgba(0,0,0,.4);
+  }
+  #preview-bar.visible{display:flex}
+  #preview-bar span{font-weight:700;font-size:.86rem;letter-spacing:.8px;text-transform:uppercase}
+  .pb-btn{padding:6px 16px;border-radius:2px;border:none;font-size:.78rem;font-weight:700;
+    cursor:pointer;letter-spacing:.5px;text-transform:uppercase}
+  .pb-print{background:#c8a828;color:#0f1a08}
+  .pb-close{background:rgba(255,255,255,.1);color:#e8dfa8;border:1px solid rgba(200,168,40,.4);margin-left:6px}
+  .pb-close:hover{background:rgba(200,168,40,.2)}
+
+  /* ── MAIN WRAP ── */
+  .main-wrap{max-width:880px;margin:18px auto;padding:0 14px 40px}
+
+  /* ── NOTICE ── */
+  .notice{
+    background:rgba(200,168,40,.12);
+    border-left:4px solid #c8a828;
+    border-radius:0 3px 3px 0;
+    padding:10px 14px;font-size:.8rem;
+    color:#e8dfa8;margin-bottom:16px;
+    letter-spacing:.2px;
+  }
+
+  /* ── FORM SECTIONS ── */
+  .fsec{
+    background:#222b16;
+    border:1px solid #3a4a28;
+    border-top:3px solid #c8a828;
+    border-radius:2px;
+    box-shadow:0 4px 16px rgba(0,0,0,.4);
+    margin-bottom:14px;overflow:hidden;
+  }
+  .fsec-head{
+    background:linear-gradient(90deg,#1a2810 0%,#253515 40%,#1e2d10 100%);
+    color:#e8dfa8;
+    padding:10px 16px;font-size:.8rem;font-weight:700;
+    letter-spacing:1.5px;text-transform:uppercase;
+    border-bottom:1px solid #3a4a28;
+    display:flex;align-items:center;gap:8px;
+  }
+  .fsec-body{padding:16px;background:#222b16}
+
+  /* ── GRIDS ── */
+  .g1{display:grid;grid-template-columns:1fr;gap:11px}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+  .g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:11px}
+  @media(max-width:680px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  /* ── FIELDS ── */
+  .field{display:flex;flex-direction:column;gap:4px}
+  .field label{
+    font-size:.65rem;font-weight:700;color:#8a9e60;
+    text-transform:uppercase;letter-spacing:1px;
+  }
+  .field input,.field select,.field textarea{
+    border:1px solid #3a4a28;
+    border-radius:2px;
+    padding:7px 10px;
+    font-size:.86rem;font-family:inherit;width:100%;
+    background:#1a2010;color:#dde4c8;
+    transition:border-color .15s,box-shadow .15s;
+  }
+  .field input::placeholder{color:#4a5a38;font-style:italic}
+  .field select option{background:#1a2010;color:#dde4c8}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:#c8a828;
+    box-shadow:0 0 0 3px rgba(200,168,40,.15);
+    background:#1e2814;
+  }
+  .field textarea{resize:vertical;min-height:58px}
+
+  .sub-head{
+    font-size:.74rem;font-weight:700;color:#c8a828;
+    margin:12px 0 7px;padding-bottom:4px;
+    border-bottom:1px solid #3a4a28;
+    letter-spacing:1px;text-transform:uppercase;
+  }
+  hr.div{border:none;border-top:1px dashed #2e3e1e;margin:12px 0}
+
+  .rg{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:5px 0}
+  .rg label{display:flex;align-items:center;gap:6px;font-size:.86rem;cursor:pointer;color:#dde4c8}
+  .rg input[type=radio]{
+    width:14px;height:14px;margin:0;
+    accent-color:#c8a828;cursor:pointer;
+  }
+
+  /* ── MS TABLE ── */
+  .ms-wrap{overflow-x:auto;margin-bottom:8px;
+    border:1px solid #3a4a28;border-radius:2px}
+  table.ms-entry{width:100%;border-collapse:collapse;font-size:.81rem}
+  table.ms-entry th{
+    background:linear-gradient(90deg,#253515,#1e2d10);
+    color:#e8dfa8;padding:7px 8px;font-size:.7rem;
+    text-align:center;white-space:nowrap;
+    letter-spacing:.8px;text-transform:uppercase;
+    border-bottom:2px solid #c8a828;
+  }
+  table.ms-entry td{
+    border-bottom:1px solid #2e3e1e;border-right:1px solid #2e3e1e;
+    padding:2px 4px;background:#1e2814;
+  }
+  table.ms-entry tr:nth-child(even) td{background:#1a2410}
+  table.ms-entry td input,table.ms-entry td select{
+    border:none;background:transparent;width:100%;
+    padding:4px 5px;font-family:inherit;font-size:.81rem;color:#dde4c8;
+  }
+  table.ms-entry td input:focus,table.ms-entry td select:focus{
+    outline:1px solid #c8a828;background:rgba(200,168,40,.08);
+  }
+  table.ms-entry td select option{background:#1a2010}
+  .btn-add{
+    background:#253515;color:#c8a828;
+    border:1px solid #c8a828;
+    border-radius:2px;padding:5px 13px;
+    cursor:pointer;font-size:.76rem;font-weight:700;
+    letter-spacing:.8px;text-transform:uppercase;
+    transition:background .15s;
+  }
+  .btn-add:hover{background:#c8a828;color:#0f1a08}
+  .btn-rm{
+    background:#3a1010;color:#e05050;
+    border:1px solid #6a2020;
+    border-radius:2px;padding:2px 8px;
+    cursor:pointer;font-size:.72rem;
+  }
+  .btn-rm:hover{background:#e05050;color:white}
+
+  /* ── ACTION BAR ── */
+  .action-bar{
+    background:linear-gradient(180deg,#1e2d10,#1a2810);
+    border:1px solid #3a4a28;border-top:2px solid #c8a828;
+    border-radius:2px;
+    box-shadow:0 4px 16px rgba(0,0,0,.4);
+    padding:16px 18px;
+    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+    margin-bottom:24px;
+  }
+  .btn-main{
+    border:none;border-radius:2px;
+    padding:11px 28px;font-size:.84rem;font-weight:700;cursor:pointer;
+    display:flex;align-items:center;gap:7px;
+    letter-spacing:1px;text-transform:uppercase;
+    transition:filter .15s,transform .1s;
+  }
+  .btn-main:hover{filter:brightness(1.15);transform:translateY(-1px)}
+  .btn-main:active{transform:translateY(0)}
+  .btn-print{background:linear-gradient(135deg,#1e3a60,#0d2b45);color:#e8dfa8;
+    border:1px solid #4a6a9a;box-shadow:0 2px 8px rgba(13,43,69,.5)}
+  .btn-preview{background:linear-gradient(135deg,#c8a828,#a88818);color:#0f1a08;
+    border:1px solid #e8c840;box-shadow:0 2px 8px rgba(200,168,40,.3)}
+  .btn-clear{background:transparent;color:#8a9e60;border:1px solid #3a4a28}
+  .btn-clear:hover{border-color:#8a9e60;color:#dde4c8;filter:none;transform:none}
+
+  #print-section{display:none;margin-top:18px}
+  #print-section.visible{display:block}
+}
+
+/* ═══════════════════════════════════════════════════
+   PRINT DOCUMENT — shared styles
+═══════════════════════════════════════════════════ */
+.print-doc{font-family:Arial,sans-serif;font-size:8.5pt;color:#000;background:white}
+
+.print-page{
+  width:185mm;
+  margin:0 auto 8px;
+  background:white;
+  padding:6mm 12mm 6mm;
+  display:flex;
+  flex-direction:column;
+  page-break-after:always;
+}
+.print-page:last-child{page-break-after:auto}
+@media screen{
+  .print-page{border:1px solid #bbbfc8;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+}
+
+/* -- Page header -- */
+.pg-hdr{margin-bottom:2mm;flex-shrink:0}
+.army-motto{color:#1f6b1f;font-style:italic;font-weight:bold;font-size:7.5pt;
+  text-align:center;margin-bottom:1.5mm}
+.dept-row{display:flex;align-items:center;justify-content:space-between;gap:3mm}
+.dept-logo{width:22mm;height:22mm;object-fit:contain;flex-shrink:0}
+.dept-txt{flex:1;text-align:center;line-height:1.45}
+.dept-txt .d1{font-size:7.5pt}
+.dept-txt .d2{font-size:8.5pt;font-weight:bold}
+.dept-txt .d3{font-size:7.5pt}
+.dept-txt .d4{font-size:7pt}
+.hdr-rule{border:none;border-top:1.5pt solid #000;margin:2mm 0 0}
+
+/* -- Page footer -- */
+.pg-ftr{flex-shrink:0;padding-top:35mm;margin-top:4mm}
+.ftr-rule{border:none;border-top:.75pt solid #000;margin-bottom:1.5mm}
+.honor-txt{color:#1f6b1f;font-style:italic;font-weight:bold;font-size:8pt;text-align:center}
+
+/* -- Titles -- */
+.doc-title{text-align:center;font-weight:bold;font-size:10pt;text-decoration:underline;
+  margin:2mm 0 1.5mm;text-transform:uppercase}
+.doc-subtitle{text-align:center;font-style:italic;font-size:8pt;margin-bottom:1.5mm}
+
+/* -- Field rows -- */
+.fr{line-height:1.9;margin-bottom:.5mm}
+.fl{font-size:8.5pt}
+.fv{display:inline-block;border-bottom:.75pt solid #000;min-height:.9em;
+  vertical-align:bottom;font-size:8.5pt;padding:0 1mm}
+.fv.xs{min-width:10mm}.fv.s{min-width:18mm}.fv.m{min-width:28mm}
+.fv.l{min-width:42mm}.fv.xl{min-width:58mm}.fv.xxl{min-width:80mm}
+.fv.full{min-width:155mm}
+.ind{margin-left:7mm}
+
+/* -- Section labels -- */
+.slbl{font-weight:bold;font-size:8.5pt;margin:2mm 0 .5mm}
+.edu-lbl{font-weight:bold;font-size:8.5pt;margin:1.5mm 0 .5mm;margin-left:4mm}
+
+/* -- MS underline table -- */
+.tbl-ms{width:100%;border-collapse:collapse;font-size:8pt}
+.tbl-ms th{text-align:center;font-weight:bold;border-bottom:.75pt solid #000;padding:.8mm 1.5mm;font-size:7.5pt}
+.tbl-ms td{border-bottom:.75pt solid #000;padding:.8mm 1.5mm;text-align:center;min-height:4mm}
+.tbl-ms .c1{width:9%}.tbl-ms .c2{width:19%}.tbl-ms .c3{width:27%}
+.tbl-ms .c4{width:14%}.tbl-ms .c5{width:31%}
+
+/* -- Educational table -- */
+.tbl-edu{width:calc(100% - 4mm);margin-left:4mm;border-collapse:collapse;font-size:8.5pt}
+.tbl-edu th{text-decoration:underline;font-weight:bold;text-align:center;padding:0 2mm 1mm;font-size:8pt}
+.tbl-edu td{border-bottom:.75pt solid #000;padding:.8mm 2mm;min-height:5mm}
+.tbl-edu .tc1{width:42%}.tbl-edu .tc2{width:28%}.tbl-edu .tc3{width:30%}
+
+/* -- Signature section -- */
+.sig-section{display:flex;justify-content:space-between;align-items:center;margin-top:4mm}
+.photo-box-2x2{border:1pt solid #000;width:36mm;height:45mm;display:flex;
+  flex-direction:column;align-items:center;justify-content:flex-end;
+  padding-bottom:2mm;font-size:7.5pt;font-weight:bold;color:#222;flex-shrink:0}
+.sig-right{text-align:center;flex:1;padding-bottom:0}
+.sig-line{border-top:.75pt solid #000;width:65mm;margin:0 auto 2mm}
+.sig-cap{font-size:8pt}
+
+/* -- Thumbmarks -- */
+.thumb-sec{margin-top:3mm;text-align:center}
+.thumb-title{font-weight:bold;font-size:8.5pt;text-align:center;margin-top:1.5mm}
+.thumb-row{display:flex;justify-content:center;gap:10mm}
+.thumb-item{text-align:center}
+.thumb-box{border:1pt solid #000;width:24mm;height:24mm}
+.thumb-lbl{font-size:8pt;margin-top:1mm}
+
+/* -- Reg form photo boxes -- */
+.photo-top-row{display:flex;justify-content:space-between;margin-bottom:1mm;gap:4mm}
+.photo-top-box{border:1pt solid #000;flex:1;min-height:48mm;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  padding-bottom:2mm;font-size:7pt;color:#777;text-align:center}
+
+/* -- Certification -- */
+.cert-hdr{margin:2mm 0 1mm;padding-top:2mm;border-top:1pt solid #000}
+.cert-llcc{text-align:left;font-weight:bold;font-size:9pt;margin-bottom:1mm}
+.cert-title{text-align:center;font-size:12pt;font-weight:bold;letter-spacing:4px;
+  margin:1mm 0 1mm;text-decoration:underline}
+.cert-concern{font-weight:bold;font-size:9pt;margin-bottom:1mm}
+.cert-body{font-size:9pt;line-height:2;text-indent:20mm}
+.cert-sig-area{text-align:right;margin-top:8mm}
+.cert-sig-line{border-top:.75pt solid #000;width:70mm;margin-left:auto;margin-bottom:2mm}
+.cert-name{font-weight:bold;font-size:9pt}
+.cert-rank{font-size:8.5pt}
+
+/* -- Record Data Card -- */
+.rdc-wrapper{display:flex;flex-direction:column;gap:8mm}
+.rdc{position:relative;border:2pt solid #000;padding:6px 8px;overflow:hidden}
+.rdc-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.3;z-index:0;pointer-events:none}
+.rdc-content{position:relative;z-index:1}
+.rdc-top{text-align:center;font-size:7pt;font-weight:bold;line-height:1.5;margin-bottom:2mm}
+.rdc-title{text-align:center;font-size:10.5pt;font-weight:bold;margin:1.5mm 0 .5mm;text-transform:uppercase}
+.rdc-sub{text-align:center;font-style:italic;font-size:7.5pt;margin-bottom:3mm}
+.rdc .fr .fv.xs{min-width:8mm}.rdc .fr .fv.s{min-width:14mm}
+.rdc .fr .fv.m{min-width:22mm}.rdc .fr .fv.l{min-width:34mm}
+.rdc .fr .fv.xxl{min-width:60mm}
+
+/* ── Print media ── */
+@media print{
+  @page{
+    size:8.5in 14in portrait;
+    margin:.45in .6in;
+  }
+  body{margin:0;background:white!important}
+  #entry-section,#preview-bar{display:none!important}
+  #print-section{display:block!important}
+
+  .print-page{
+    display:flex!important;
+    flex-direction:column!important;
+    height:100vh;   /* adapts to whatever paper size the browser uses */
+    overflow:hidden;
+    border:none!important;
+    box-shadow:none!important;
+    width:100%;
+    padding:0;
+    margin:0;
+    page-break-after:always;
+    break-after:page;
+  }
+  .print-page:last-child{
+    page-break-after:auto;
+    break-after:auto;
+  }
+
+  /* Push footer to the absolute bottom of each page */
+  .pg-ftr{
+    margin-top:auto!important;
+    flex-shrink:0;
+  }
+
+  /* Tighten spacing so content fits */
+  .fr{line-height:1.7;margin-bottom:0}
+  .slbl{margin:1.5mm 0 .3mm}
+  .edu-lbl{margin:1mm 0 .3mm}
+  .tbl-ms td,.tbl-ms th{padding:.5mm 1.5mm}
+  .tbl-edu td,.tbl-edu th{padding:.4mm 2mm}
+  .hdr-rule{margin:1.5mm 0 0}
+  .pg-hdr{margin-bottom:1.5mm}
+  .army-motto{margin-bottom:1mm}
+  .dept-logo{width:19mm;height:19mm}
+}
